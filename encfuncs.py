@@ -16,9 +16,9 @@ def encrypt_dir(root):
     files = glob.glob(root + "/*", recursive=True)
     # Filter out files that are already encrypted, else it will make
     # -decrypting difficult.
-    files_not_encrypted = list(filter(lambda f: not f.endswith(".enc"), files))
+    files_not_encrypted = filter(lambda fp: not fp.endswith(".enc"), files)
     for filepath in list(files_not_encrypted):
-        print("Encrypting {}...".format(filepath))
+        print("Encrypting \"{}\"...".format(filepath))
         encrypt_file(filepath)
 
 encrypt_dir("testdir")

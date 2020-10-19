@@ -3,7 +3,7 @@ CPU Stressor
 '''
 
 from os import cpu_count
-import threading
+from threading import Thread
 
 # I think the use of threads is holding it back, switch to processes?
 
@@ -26,6 +26,6 @@ class Stressor:
     def start(self):
         self.run = True
         for _ in range(self.cpus):
-            threading.Thread(target=dummy_load, args=(lambda : self.run,)).start()
+            Thread(target=dummy_load, args=(lambda : self.run,)).start()
     def stop(self):
         self.run = False

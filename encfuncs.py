@@ -80,5 +80,6 @@ def decrypt_dir(root):
         print("Decrypting \"{}\"...".format(filepath))
         decrypt_file(filepath, read_key())
 
-encrypt_dir("testdir")
-decrypt_dir("testdir")
+if __name__ == "__main__":
+    encrypt_dir("testdir")
+    decrypt_dir("testdir")

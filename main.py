@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import messagebox as msgbox
 from screeninfo import get_monitors 
+from msgboxes import displayErrors
 
 class Application(tk.Frame):
     def __init__(self, master=None):
@@ -19,11 +19,7 @@ width, height = screen[0].width, screen[0].height
 labels = ["test1", "test2", "test3"]
 exits = ["exit1", "exit2", "exit3"]
 sizes = ["100x100", "200x200", "300x300"]
-insults =["I can't believe it you actually have a negative a IQ!",
-          "If you killed yourself, your family would actually be relieved.",
-          "Your parents should have left you in the sheets."]
-for insult in insults:
-    msgbox.showerror("YOU RETARD", insult)
+displayErrors()
 for i in range(len(labels)):
     root = tk.Tk()
     position = f"+{width//2-int(sizes[i].split('x')[0])//2}+{height//2-int(sizes[i].split('x')[1])//2}"

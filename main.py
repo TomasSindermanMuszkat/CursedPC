@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox as msgbox
-from screeninfo import get_monitors 
+from screeninfo import get_monitors
 
 class Application(tk.Frame):
     def __init__(self, master=None):
